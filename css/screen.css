@@ -37,10 +37,11 @@ html {
     font-size: 16px;
     line-height: 1.5;
     font-family: "HK Grotesk Web", Helvetica, arial, sans-serif;
-    color: #111;
+    color: #202024;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 .has-mobile-nav {
@@ -180,18 +181,18 @@ hr {
 }
 
 a {
-    color: RoyalBlue;
+    color: #5051db;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: BlueViolet;
+    color: #3e3eab;
 }
 
 a:hover,
 a:focus {
-    color: Crimson;
+    color: #3e3eab;
 }
 
 /*------------------------------------*\
@@ -208,6 +209,17 @@ a:focus {
     position: relative;
     padding: 24px 24px 0;
     display: flow-root;
+}
+
+/* color modifiers */
+
+.o-row--neutral-x-light {
+    background-color: #f7f7f7;
+}
+
+.o-row--gradient {
+    background: linear-gradient(to top right, #5051db, #3887f7);
+    color: #fff;
 }
 
 /* size modifiers */
@@ -231,10 +243,6 @@ a:focus {
         padding-top: 72px;
         padding-bottom: 48px;
     }
-}
-
-.o-row--neutral-x-light {
-    background-color: #f7f7f7;
 }
 
 /*
@@ -393,6 +401,12 @@ a:focus {
     align-content: space-between;
 }
 
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
 .o-list {
     list-style: none;
     padding: 0;
@@ -401,6 +415,12 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
 
 .c-logo {
     height: 32px;
@@ -417,6 +437,12 @@ a:focus {
         height: 40px;
     }
 }
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
 
 .c-header {
     display: flex;
@@ -438,6 +464,12 @@ a:focus {
     }
 }
 
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
 .c-nav__link:first-child{
     padding-left: 0;
 }
@@ -447,11 +479,21 @@ a:focus {
     line-height: 24px;
 }
 
+.c-nav--meta {
+    font-size: 16x;
+}
+
 .c-nav__link {
     text-decoration: none;
     font-weight: 400;
     padding: 8px 0;
     display: block;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #202024;
 }
 
 .c-nav__link--meta,
@@ -600,6 +642,21 @@ a:focus {
     background-color: #3e3eab;
 }
 
+/* inversed */
+
+.c-link-cta--inverse,
+.c-link-cta--inverse:visited,
+.c-link-cta--inverse:active {
+    color: #fff;
+}
+
+.c-link-cta--inverse::after {
+    background-color: #fff;
+}
+
+.c-link-cta--inverse:hover::after {
+    background-color: #fff;
+}
 
 
 
@@ -625,6 +682,15 @@ a:focus {
     color: #3e3ea8 !important;
 }
 
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0!important;
+}
 
 /*
     Utilities: max-width
@@ -655,17 +721,6 @@ a:focus {
 .u-max-width-none {
     max-width: none !important;
 }
-
-/*
-    Utilities: spacing
-    ---
-    Utility classes to put specific margins and paddings onto elements
-*/
-
-.u-pt-clear {
-    padding-top: 0!important;
-}
-
 
 /*
     Utility: Flex
