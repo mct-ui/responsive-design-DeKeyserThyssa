@@ -455,12 +455,79 @@ a:focus {
 }
 
 @media (min-width: 992px) {
-    .c-header {
+    .c-header__logo,
+    .c-header__nav {
+        flex-grow: 1;
+        flex-basis: 50%;
     }
 
     .c-header__nav {
         display: flex;
         justify-content: flex-end;
+    }
+
+    .c-header__nav--main {
+        flex-grow: 2;
+        justify-content: center;
+    }
+
+    .c-header__mobile-nav-trigger {
+        display: none;
+    }
+}
+
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+.c-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-footer__logo {
+    width: 100%;
+}
+
+.c-footer__nav {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .c-footer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .c-footer__logo {
+        display: flex;
+        justify-content: center;
+        padding: 0 12px;
+    }
+
+    .c-footer__nav {
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-footer {
+        justify-content: space-between;
+    }
+
+    .c-footer__logo {
+        width: auto;
+    }
+
+    .c-footer__logo + .c-footer__nav {
+        order: -1;
+    }
+
+    .c-footer__nav {
+        padding: 0;
     }
 }
 
@@ -469,10 +536,6 @@ a:focus {
     ---
     Main navigation of the site
 */
-
-.c-nav__link:first-child{
-    padding-left: 0;
-}
 
 .c-nav {
     font-size: 18px;
@@ -488,6 +551,7 @@ a:focus {
     font-weight: 400;
     padding: 8px 0;
     display: block;
+    padding: 8px 0;
 }
 
 .c-nav__link,
