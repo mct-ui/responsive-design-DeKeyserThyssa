@@ -422,6 +422,14 @@ a:focus {
 }
 
 
+.c-layout__item:nth-child(1) {
+    text-align: center;
+}
+
+.c-layout__item:nth-child(2) {
+    text-align: right;
+}
+
 
 /*------------------------------------*\
   #UTILITIES
